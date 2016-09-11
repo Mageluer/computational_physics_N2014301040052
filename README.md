@@ -1,6 +1,6 @@
 # Computational Physics Powered by Python
 
-[visit my home page:blush:](https://mageluer.github.io)
+[:blush: visit my home page](https://mageluer.github.io)
  
 ## Homework List
 - \[x] [Exercise_01:](#) 
