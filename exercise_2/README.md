@@ -1,6 +1,6 @@
-# Just use dict to translate the alpha strings to figure
+# Just use dict to translate the alpha strings to figures
 
-# The effect
+## The effect
 ```bash
 [mageluer@localhost ~]$ cd Documents/github/computational_physics_N2014301040052/exercise_2/
 [mageluer@localhost exercise_2]$ tty
