@@ -9,5 +9,5 @@
   - [Set up github account and create the repo for computational physics](https://github.com/Mageluer)
   - [Write the README.md](#)
 
-- \[ ] Exercise\_2:
+- \[x] Exercise\_2:
   - [Use computers for presentation and consists of alpha string from the characters defined by the ASCII Standard](/exercise_2)
