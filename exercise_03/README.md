@@ -24,7 +24,7 @@ Any char can be displayed in ASCII text as long as you can type it out. The defa
 I realize two dynamic effects(wave and rotation).   
 ![](images/dynamic_choice.png)   
 An example of wave effect:   
-![](images/wave_string.png)  
+![](images/wave_str.png)  
 **Again, the length of string should be reasonable.**
 ### Planes Flying
 All kinds of planes flying from the bottom to the upper. Just enjoy the show.   
