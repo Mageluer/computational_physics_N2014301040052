@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding=utf-8 -*-
 
 # do some interesting things with curses
 

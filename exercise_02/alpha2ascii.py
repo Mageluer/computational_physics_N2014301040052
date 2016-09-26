@@ -17,7 +17,7 @@ for ascii in range(65,91):
     art_dict[char] = getArtLines(ascii)
 art_dict[" "] = ['   ', '   ', '   '] # for space
 
-str = input("Type what you want to generate character ascii art:").upper()
+str = raw_input("Type what you want to generate character ascii art:").upper()
 
 artLines = ["", "", ""]
 
