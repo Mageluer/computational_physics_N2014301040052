@@ -26,7 +26,7 @@ It is easy to see
 
 Thus, we get <img src="http://latex.codecogs.com/gif.latex?N_A+N_B{\equiv}N_{A0}+N_{B0}" /> and <img src="http://latex.codecogs.com/gif.latex?\frac{dN_A}{dt}=\frac{N-2N_A}{\tau}" /> by apply <img src="http://latex.codecogs.com/gif.latex?N_B=N-N_A" /> where <img src="http://latex.codecogs.com/gif.latex?N" /> is the sum of nuclei number. Then, we get
 
-<img src="http://latex.codecogs.com/gif.latex?N_A(t+\delta{t})=N_A(t)+\frac{N-2N_A(t)}{\tau}\delta{t}" />
+<img src="http://latex.codecogs.com/gif.latex?N_A(t+\Delta{t})=N_A(t)+\frac{N-2N_A(t)}{\tau}\Delta{t}" />
 
 and the solution is around the corner.
 
@@ -43,10 +43,10 @@ which provides a good comparison to numerical solutions.
 
 ![](figure_1.png)
 
-We can try different values of <img src="http://latex.codecogs.com/gif.latex?N_{A0},N_{B0},\tau,\delta{t}" alt="" title="" />. Obviously the smaller <img src="http://latex.codecogs.com/gif.latex?\delta{t}" alt="" title="" /> is and the more precise the result will be.
+We can try different values of <img src="http://latex.codecogs.com/gif.latex?N_{A0},N_{B0},\tau,\Delta{t}" alt="" title="" />. Obviously the smaller <img src="http://latex.codecogs.com/gif.latex?\Delta{t}" alt="" title="" /> is and the more precise the result will be.
 
 ## Discussion
-There is no doubt that we preffer a analytic solution to a numerical solution. Why not try it?
+There is no doubt that we prefer a analytic solution to a numerical solution. Why not try it?
 
 ## Acknowledgement
 Thanks to **_John Hunter_**!  
