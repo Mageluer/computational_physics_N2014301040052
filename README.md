@@ -19,3 +19,5 @@
   - [Transform a picture into ascii](/exercise_03#user-content-picture-to-ascii)
 - [x] Exercise\_04:
   - [Solutions to a nuclei decay problem with Eluer method](/exercise_04)
+- [x] Exercise\_05:
+  - [Solutions to the trajectory of a cannon shell under different conditions with Eluer method](/exercise_05)
