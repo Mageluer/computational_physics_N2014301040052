@@ -21,3 +21,5 @@
   - [Solutions to a nuclei decay problem with Eluer method](/exercise_04)
 - [x] Exercise\_05:
   - [Solutions to the trajectory of a cannon shell under different conditions with Eluer method](/exercise_05)
+- [x] Exercise\_06:
+  - [Solutions to the trajectory of a cannon shell which hit the target precisely under wind drag](/exercise_06)
