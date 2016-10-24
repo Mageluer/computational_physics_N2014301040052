@@ -89,24 +89,40 @@ class cannon:
         #    引用变量可不喜欢跟你开玩笑   #
         #                                 #
         ###################################
+##########################################################################################
+
+########       接下来随便画图   ###############           #################       ########
+
+###########################################################################################
 strikeit = cannon()
 ta = [2334,5434,7789,233,52,3455,9999,]
 tb = [334,34,78,233,1252,355,9,]
 ao = ['b','g','r','c','m','y','k']
+font = {'family': 'serif',
+        'color':  'darkred',
+        'weight': 'normal',
+        'size': 16,
+        }
+va = []
+thea =[]
+agg = range(10,80,3)
 wind = range(10, 78, 10)
-for i in range(7):
-    strikeit.target_x=ta[i]
-    strikeit.target_y=tb[i]
-    strikeit.xzz, strikeit.yzz,d,v = strikeit.strike(45,0)
-    pl.text(23, 3400,'$\\theta$= ' + str(45) + '$^{\\circ}$')
-    pl.plot(strikeit.xzz, strikeit.yzz, ao[i], label =  str(strikeit.target_x) +  '$m$, ' +str(strikeit.target_y)+ '$m$' )
-    pl.xlim(0,10100)
-    pl.ylim(0,3500)
-    pl.xlabel('x $m$')
-    pl.ylabel('y $m$')
-    pl.scatter([strikeit.target_x,],[strikeit.target_y,],50,color=ao[i])
-    pl.title('Trajectory of cannon shell attack at the target\n with different wind speed in adiabatic model')
-    pl.legend(loc='best')
+for ag in agg:
+    strikeit.target_x=1200
+    strikeit.target_y=500
+    strikeit.xzz, strikeit.yzz,d,v = strikeit.strike(ag,0)
+    va.append(v)
+pl.text(8, 50,'target position:' + str(strikeit.target_x) +  '$m$, ' +str(strikeit.target_y) + '$m$', fontdict=font)
+pl.plot(agg, va,'c--o',linewidth=2.5, label = 'velocity')# '$\\theta$= '+ str(agg[i])+ '$^{\\circ}$'+ '$v$ = ' + str(v)+ '$m/s$')
+pl.xlim(5, 85)
+pl.ylim(0,500)
+pl.xlabel('firing angle ($^{\\circ}$)', fontdict=font)
+pl.ylabel('v ($m/s$)', fontdict=font)
+idxc = va.index(min(va))
+pl.scatter([agg[idxc],],[va[idxc],],100,color=ao[4])
+pl.title('firing velocity under different firing angles', fontdict=font)#Trajectory of cannon shell attack at the target\n with firing angles in adiabatic model', fontdict=font)
+pl.legend(loc='best')
+pl.annotate(r'minimum velocity: ' + str(va[idxc])+'$m/s$'+ '\nat '+ str(agg[idxc])+'$^{\\circ}$',xy=(agg[idxc],va[idxc]), xycoords='data',xytext=(-90, -50), textcoords='offset points', fontsize=16,arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2"))
 pl.grid()
 pl.show()
     

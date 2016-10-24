@@ -51,7 +51,7 @@ Here I use the **Midpoint method** to get a more accurate solution and in fact i
  
 As for pinpoint strike and minimun speed, **bisection method** is not a bad choice. We must take efficiency into considerarion because  the models are not easy to maintain as they grow in size and complexity over many iterations.
 
-![](http://img4.imgtn.bdimg.com/it/u=2669387814,2194399808&fm=21&gp=0.jpg)  
+![](http://images2015.cnblogs.com/blog/828056/201601/828056-20160110145045871-2120864610.png)
 I use the smallest tangent distance to determinate the falling point.
 
 ## Results
@@ -63,6 +63,12 @@ trojectories under different wind speed:
 As you can see, each target is hit accurately(the precision up to 1e-8 m!) but it calculates quickly.
 
 ![](./strike.png)
+
+### Strike the target from different firing angles
+![](./strikes.png)
+
+### Firing velocity versus firing angle
+![](./vtheta.png)
 
 ## Discussion
 There is no doubt that we prefer a analytic solution to a numerical solution. Why not try it?
