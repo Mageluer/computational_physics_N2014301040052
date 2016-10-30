@@ -62,7 +62,7 @@ An easy way to visualize a chaotic attractor is to start with a point in the bas
 
 Unlike fixed-point attractors and limit cycles, the attractors that arise from chaotic systems, known as strange attractors, have great detail and complexity. Strange attractors occur in both continuous dynamical systems (such as the Lorenz system) and in some discrete systems (such as the Hénon map). Other discrete dynamical systems have a repelling structure called a Julia set, which forms at the boundary between basins of attraction of fixed points. Julia sets can be thought of as strange repellers. Both strange attractors and Julia sets typically have a fractal structure, and the fractal dimension can be calculated for them.
 
-![](https://en.wikipedia.org/wiki/File:TwoLorenzOrbits.jpg)
+![](https://pic2.zhimg.com/7ce0d9113708c0071bf2aa1dbddbfcd1_r.jpg)
 
 #### Minimum complexity of a chaotic system
 Discrete chaotic systems, such as the logistic map, can exhibit strange attractors whatever their dimensionality. In contrast, for continuous dynamical systems, the Poincaré–Bendixson theorem shows that a strange attractor can only arise in three or more dimensions. Finite-dimensional linear systems are never chaotic; for a dynamical system to display chaotic behavior, it must be either nonlinear or infinite-dimensional.
