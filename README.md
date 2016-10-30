@@ -23,3 +23,6 @@
   - [Solutions to the trajectory of a cannon shell under different conditions with Eluer method](/exercise_05)
 - [x] Exercise\_06:
   - [Solutions to the trajectory of a cannon shell which hit the target precisely under wind drag](/exercise_06)
+- [x] Exercise\_07:
+  - [Chaos in the Driven Nonlinear Pendulum](/exercise_07)
+  - [If you want a better **VIM**](https://github.com/yangyangwithgnu/use_vim_as_ide)
