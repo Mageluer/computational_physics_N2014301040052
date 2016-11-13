@@ -26,3 +26,5 @@
 - [x] Exercise\_07:
   - [Chaos in the Driven Nonlinear Pendulum](/exercise_07)
   - [If you want a better **VIM**](https://github.com/yangyangwithgnu/use_vim_as_ide)
+- [x] Exercise\_08:
+  - [Routes to chaos: period doubling](/exercise_08)
