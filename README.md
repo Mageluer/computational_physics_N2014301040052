@@ -28,3 +28,5 @@
   - [If you want a better **VIM**](https://github.com/yangyangwithgnu/use_vim_as_ide)
 - [x] Exercise\_08:
   - [Routes to chaos: period doubling](/exercise_08)
+- [x] Exercise\_09:
+  - [The Billiard Problem](/exercise_09)
