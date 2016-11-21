@@ -1,7 +1,7 @@
-# Routes to Chaos: Period Doubling
+# The Billiard Problem
 
 ## Abstract
-With **Euler-Cromer Method**, it is easy to achieve a better solution to the driven nonlinear pendulum problem. And it is of great interest to study the **deterministic chaos**. In this exercise, I construct the Poincaré section and estimate the Lyapunov exponents.
+With **Euler-Cromer Method**, it is easy to achieve a better solution to the billiard problem. And it is of great interest to study the **deterministic chaos**. In this exercise, I plot the trajectory and Lyapunov exponent.
 
 ## Background
 
@@ -76,15 +76,9 @@ Bifurcation theory is the mathematical study of changes in the qualitative or to
 ![](https://upload.wikimedia.org/wikipedia/commons/e/e2/Saddlenode.gif)
 
 ## Problem Description
-Here is the problem in the book(page 65).
+Here is the problem in the book(page 88).
 
-> 3.18. Calculate Poincaré sections for the pendulum as it undergoes the period-doubling route to chaos...
-
-> 3.19. Calculate Poincaré sections... 
-
-> 3.20. RCalculate bifuration...
-
-> 3.21. Investigate...
+> 3.30 Investigate the Lyapunov exponent...
 
 What's more, this is just the tip of the iceberg.
 
@@ -92,35 +86,54 @@ What's more, this is just the tip of the iceberg.
 ### Problem Analysis
 These problem are similar to those in the book. All we need to do is follow its idea and everything is OK. But, we still need to pay to your coding style!
 
+#### Collision
+I just calculate the collision point so the accuracy is very high.
+
 ## Results
-### Review of the Poincaré section
-Poincaré section in different phases corresponding to various driven force.
+### Perfect Circle
+#### Trajectory plots
+![](./img/c200.png)
+![](./img/c600.png)
+![](./img/c1000.png)
+![](./img/c2000.png)
+![](./img/c5000.png)
+![](./img/c10000.png)
 
-#### When diven force equals 1.2
-![](../exercise_07/FD12.png)
+#### Details
+![](./img/c10000d1.png)
+![](./img/c10000d2.png)
+![](./img/c10000d3.png)
+![](./img/c10000d4.png)
 
-We can find that plot patterns change along with different driven force.
+#### Precesion
+![](./img/c10000s1.png)
+![](./img/c10000s2.png)
+![](./img/c10000s3.png)
+![](./img/c10000s4.png)
 
-### Results for θ as a function of time for different driving amplitude
-![](./images/thet.png)
+### Phase Plots
+![](./img/c1000p.png)
+![](./img/c2000p.png)
+![](./img/c5000p.png)
+![](./img/c10000p.png)
 
-It shows that driving force characterizes deterministic chaos.
 
-### Poincaré sections over the period-doubling route to chaos
-![](./images/theomg.png)
+### Stadium Ball
+#### Trajectory plots
+![](./img/s0001.png)
+![](./img/s001.png)
+![](./img/s01.png)
+![](./img/s05.png)
 
-### Bifurcation Diagram
-![](./images/bf1.png)
+#### Phase Plots
+![](./img/s001p.png)
+![](./img/s005p.png)
+![](./img/s01p.png)
 
-#### Details 
-![](./images/bf2.png)
-
-![](./images/bf3.png)
-
-### When angular apeed equals 4/3
-
-![](./images/bf4.png)
-
+#### Lyapunov exponent
+![](./img/l001.png)
+![](./img/l005.png)
+![](./img/l01.png)
 
 ## Discussion
 1. Numberical solution makes approximation every step, but in chaos an arbitrarily small change, or perturbation, of the current trajectory may lead to significantly different future behavior. Any other approaches to this problem other than numerical method?
