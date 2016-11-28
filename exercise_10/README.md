@@ -44,35 +44,23 @@ The semi-implicit Euler is a first-order integrator, just as the standard Euler 
 
 ![](https://upload.wikimedia.org/wikipedia/commons/f/f9/Symplectic_Euler_stability_region.jpeg)
 
-### Chaos theory
-> From [Wikipedia](https://en.wikipedia.org/wiki/Chaos_theory), the free encyclopedia
+### Kepler's laws of planetary motion
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Kepler_laws_diagram.svg/630px-Kepler_laws_diagram.svg.png)
+In astronomy, Kepler's laws of planetary motion are three scientific laws describing the motion of planets around the Sun.
+> 1. The orbit of a planet is an ellipse with the Sun at one of the two foci.
+> 2. A line segment joining a planet and the Sun sweeps out equal areas during equal intervals of time.
+> 3. The square of the orbital period of a planet is proportional to the cube of the semi-major axis of its orbit.
 
-Chaos theory is the field of study in mathematics that studies the behavior of dynamical systems that are highly sensitive to initial conditions—a response popularly referred to as the butterfly effect. Small differences in initial conditions (such as those due to rounding errors in numerical computation) yield widely diverging outcomes for such dynamical systems, rendering long-term prediction impossible in general. This happens even though these systems are deterministic, meaning that their future behavior is fully determined by their initial conditions, with no random elements involved. In other words, the deterministic nature of these systems does not make them predictable. This behavior is known as deterministic chaos, or simply chaos. The theory was summarized by Edward Lorenz as:
+Most planetary orbits are nearly circular, and careful observation and calculation are required in order to establish that they are not perfectly circular. Calculations of the orbit of Mars, whose published values are somewhat suspect, indicated an elliptical orbit. From this, Johannes Kepler inferred that other bodies in the Solar System, including those farther away from the Sun, also have elliptical orbits.
 
-> Chaos: When the present determines the future, but the approximate present does not approximately determine the future.
+Kepler's work (published between 1609 and 1619) improved the heliocentric theory of Nicolaus Copernicus, explaining how the planets' speeds varied, and using elliptical orbits rather than circular orbits with epicycles.
 
-Chaotic behavior exists in many natural systems, such as weather and climate. It also occurs spontaneously in some systems with artificial components, such as road traffic. This behavior can be studied through analysis of a chaotic mathematical model, or through analytical techniques such as recurrence plots and Poincaré maps. Chaos theory has applications in several disciplines, including meteorology, sociology, physics, environmental science, computer science, engineering, economics, biology, ecology, and philosophy.
+Isaac Newton showed in 1687 that relationships like Kepler's would apply in the Solar System to a good approximation, as a consequence of his own laws of motion and law of universal gravitation.
 
-![](https://upload.wikimedia.org/wikipedia/commons/4/45/Double-compound-pendulum.gif)
-
-#### Strange attractors
-Some dynamical systems, like the one-dimensional logistic map defined by x → 4 x (1 – x), are chaotic everywhere, but in many cases chaotic behavior is found only in a subset of phase space. The cases of most interest arise when the chaotic behavior takes place on an attractor, since then a large set of initial conditions leads to orbits that converge to this chaotic region.
-
-An easy way to visualize a chaotic attractor is to start with a point in the basin of attraction of the attractor, and then simply plot its subsequent orbit. Because of the topological transitivity condition, this is likely to produce a picture of the entire final attractor, and indeed both orbits shown in the figure on the right give a picture of the general shape of the Lorenz attractor. This attractor results from a simple three-dimensional model of the Lorenz weather system. The Lorenz attractor is perhaps one of the best-known chaotic system diagrams, probably because it was not only one of the first, but it is also one of the most complex and as such gives rise to a very interesting pattern, that with a little imagination, looks like the wings of a butterfly.
-
-Unlike fixed-point attractors and limit cycles, the attractors that arise from chaotic systems, known as strange attractors, have great detail and complexity. Strange attractors occur in both continuous dynamical systems (such as the Lorenz system) and in some discrete systems (such as the Hénon map). Other discrete dynamical systems have a repelling structure called a Julia set, which forms at the boundary between basins of attraction of fixed points. Julia sets can be thought of as strange repellers. Both strange attractors and Julia sets typically have a fractal structure, and the fractal dimension can be calculated for them.
-
-![](https://pic2.zhimg.com/7ce0d9113708c0071bf2aa1dbddbfcd1_r.jpg)
-
-#### Minimum complexity of a chaotic system
-Discrete chaotic systems, such as the logistic map, can exhibit strange attractors whatever their dimensionality. In contrast, for continuous dynamical systems, the Poincaré–Bendixson theorem shows that a strange attractor can only arise in three or more dimensions. Finite-dimensional linear systems are never chaotic; for a dynamical system to display chaotic behavior, it must be either nonlinear or infinite-dimensional.
-
-The Poincaré–Bendixson theorem states that a two-dimensional differential equation has very regular behavior. The Lorenz attractor discussed above is generated by a system of three differential equations such as:
-
-![](https://upload.wikimedia.org/wikipedia/commons/5/5b/Lorenz_attractor_yb.svg)
+Kepler's laws are part of the foundation of modern astronomy and physics.
 
 ## Problem Description
-Here is the problem in the book(page 65).
+Here is **not** the problem in the book(page 65).
 
 > 3.12. In constructing the Poincaré section in Figure 3.9 we plotted points only at times that were in phase with the driven force; that is, at times ...
 
@@ -87,49 +75,63 @@ What's more, this is just the tip of the iceberg.
 These problem are similar to those in the book. All we need to do is follow its idea and everything is OK. But, we still need to pay to your coding style!
 
 ## Results
-### Problem 3.12: Poincaré section
-Poincaré section in different phases corresponding to various driven force.
-
-#### When diven force equals 0
-![](./FD0.png)
-#### When diven force equals 0.5
-![](./FD05.png)
-#### When diven force equals 1.2
-![](./FD12.png)
-#### When diven force equals 1.8
-![](./FD18.png)
-#### When diven force equals 2.5
-![](./FD25.png)
+### Different Orbits with different exponents
+Let's have a look at different kinds of orbits under central force field
+#### When exponent equals -4
+![](./img/e-4.png)
+#### When exponent equals -3
+![](./img/e-3.png)
+#### When exponent equals -2
+![](./img/e-2.png)
+#### When exponent equals -1
+![](./img/e-1.png)
+#### When exponent equals 0
+![](./img/e-0.png)
+#### When exponent equals 1
+![](./img/e1.png)
+#### When exponent equals 2
+![](./img/e2.png)
+#### When exponent equals 3
+![](./img/e3.png)
 
 We can find that plot patterns change along with different driven force.
 
-### Problem 3.13: Lyapunov exponent with nearly identical initial angle(0.2000 and 0.2001)
-#### When diven force equals 0
-![](./FD0tta.png)
-#### When diven force equals 0.5
-![](./FD05tta.png)
-#### When diven force equals 1.2
-![](./FD12tta.png)
-#### When diven force equals 1.8
-![](./FD18tta.png)
-#### When diven force equals 2.5
-![](./FD25tta.png)
+Pay attention that -2 is Universal gravitation while 1 is Harmonic oscillator.
 
-It shows that Lyapunov exponent characterizes deterministic chaos.
+### Verify Kepler's law
+This is the elliptical orbit we wre going to check.
+![](./img/el.png)
 
-### Problem 3.14: Lyapunov exponent with nearly identical damping factors(0.5000 and 0.5001)
-#### When diven force equals 0
-![](./FD0q.png)
-#### When diven force equals 0.5
-![](./FD05q.png)
-#### When diven force equals 1.2
-![](./FD12q.png)
-#### When diven force equals 1.8
-![](./FD18q.png)
-#### When diven force equals 2.5
-![](./FD25q.png)
+Radius versus time
+![](./img/elr.png)
 
-The result is similar to 3.13 for their sensitivity to initial conditions.
+Radius versus angle
+![](./img/elra.png)
+
+#### the First Law
+We can compare the orbit of the numeriacl result and the real ellipse with the same eccentricity ratio
+![](./img/el2.png)
+
+And the radius pattern
+![](./img/el2r.png)
+
+#### the Second Law
+Area versus time
+![](./img/el1.png)
+
+#### the Third Law
+T^3 versus A^2
+![](./img/el3.png)
+
+
+## Sad Story
+Under the dark theme, the font-color in the screen is white:
+![](./img/scrst.png)
+
+But what I have stored are figures with black font-color and you can't see my title and labels:
+![](./img/el3.png)
+
+And I am too lazy to draw them again.
 
 ## Discussion
 1. Numberical solution makes approximation every step, but in chaos an arbitrarily small change, or perturbation, of the current trajectory may lead to significantly different future behavior. Any other approaches to this problem other than numerical method?
