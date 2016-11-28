@@ -30,3 +30,5 @@
   - [Routes to chaos: period doubling](/exercise_08)
 - [x] Exercise\_09:
   - [The Billiard Problem](/exercise_09)
+- [x] Exercise\_10:
+  - [Planet Orbits under Centripetal Force](/exercise_10)
