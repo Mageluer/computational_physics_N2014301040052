@@ -82,12 +82,14 @@ Let's have a look at different kinds of orbits under central force field
 #### When exponent equals -3
 ![](./img/e-3.png)
 #### When exponent equals -2
+Here you can see 3 kinds of orbits: circle, ellipse and hyperbola.
 ![](./img/e-2.png)
 #### When exponent equals -1
 ![](./img/e-1.png)
 #### When exponent equals 0
 ![](./img/e-0.png)
 #### When exponent equals 1
+Always ellipse
 ![](./img/e1.png)
 #### When exponent equals 2
 ![](./img/e2.png)
@@ -132,6 +134,7 @@ But what I have stored are figures with black font-color and you can't see my ti
 ![](./img/el3.png)
 
 And I am too lazy to draw them again.
+However, you can enjoy my [code](./orbit.py).
 
 ## Discussion
 1. Numberical solution makes approximation every step, but in chaos an arbitrarily small change, or perturbation, of the current trajectory may lead to significantly different future behavior. Any other approaches to this problem other than numerical method?
