@@ -1,4 +1,4 @@
-# Chaos in the Driven Nonlinear Pendulum
+# Planet Orbits under Centripetal Force
 
 ## Abstract
 With **Euler-Cromer Method** and **bisection method**, it is easy to achieve a better solution to the driven nonlinear pendulum problem. And it is of great interest to study the **deterministic chaos**. In this exercise, I construct the Poincaré section and estimate the Lyapunov exponents.
