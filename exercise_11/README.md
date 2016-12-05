@@ -52,7 +52,7 @@ The semi-implicit Euler is a first-order integrator, just as the standard Euler 
 Hyperion (/haɪˈpɪəriən/;Greek: Ὑπερίων), also known as Saturn VII (7), is a moon of Saturn discovered by William Cranch Bond, George Phillips Bond and William Lassell in 1848. It is distinguished by its irregular shape, its chaotic rotation, and its unexplained sponge-like appearance. It was the first non-round moon to be discovered.
 
 #### Physical characteristics
-![](./img/hyperion.png)
+![](./img/hyperion.jpg)
 1. Shape   
 Hyperion is one of the largest bodies known to be highly irregularly shaped (non-ellipsoidal, i.e. not in hydrostatic equilibrium) in the Solar System.[c] The only larger moon known to be irregular in shape is Neptune's moon Proteus. Hyperion has about 15% of the mass of Mimas, the least massive known ellipsoidal body. The largest crater on Hyperion is approximately 121.57 km (75.54 mi) in diameter and 10.2 km (6.3 mi) deep. A possible explanation for the irregular shape is that Hyperion is a fragment of a larger body that was broken up by a large impact in the distant past. A proto-Hyperion could have been 350–1,000 km (220–620 mi) in diameter. Over about 1,000 years, ejecta from a presumed Hyperion breakup would have impacted Titan at low speeds, building up volatiles in the atmosphere of Titan.
 2. Composition   
@@ -84,64 +84,64 @@ These problem are similar to those in the book. All we need to do is follow its 
 ### Circular orbit
 Results under different ratios of m1 and m2.
 #### Theta and omega versus time
-![](./img/me-4.svg)
+![](./img/me-4.png)
 
-![](./img/me-3.svg)
+![](./img/me-3.png)
 
-![](./img/me-2.svg)
+![](./img/me-2.png)
 
-![](./img/me-1.svg)
+![](./img/me-1.png)
 
-![](./img/m2e-1.svg)
+![](./img/m2e-1.png)
 
-![](./img/m5e-1.svg)
+![](./img/m5e-1.png)
 
 #### Omega versus theta 
-![](./img/ome-4.svg)
+![](./img/ome-4.png)
 
-![](./img/ome-3.svg)
+![](./img/ome-3.png)
 
-![](./img/ome-2.svg)
+![](./img/ome-2.png)
 
-![](./img/ome-1.svg)
+![](./img/ome-1.png)
 
-![](./img/om2e-1.svg)
+![](./img/om2e-1.png)
 
-![](./img/om3e-1.svg)
+![](./img/om3e-1.png)
 
-![](./img/om5e-1.svg)
+![](./img/om5e-1.png)
 
 ### Elliptical orbit
 Results under different ratios of m1 and m2.
 
 #### Theta and omega versus time
-![](./img/em1e-1.svg)
+![](./img/em1e-1.png)
 
-![](./img/em3e-1.svg)
+![](./img/em3e-1.png)
 
-![](./img/em5e-1.svg)
+![](./img/em5e-1.png)
 
-![](./img/em7e-1.svg)
+![](./img/em7e-1.png)
 
-![](./img/em9e-1.svg)
+![](./img/em9e-1.png)
 
 #### Omega versus theta 
-![](./img/oem1e-1.svg)
+![](./img/oem1e-1.png)
 
-![](./img/oem3e-1.svg)
+![](./img/oem3e-1.png)
 
-![](./img/oem5e-1.svg)
+![](./img/oem5e-1.png)
 
-![](./img/oem7e-1.svg)
+![](./img/oem7e-1.png)
 
-![](./img/oem9e-1.svg)
+![](./img/oem9e-1.png)
 
 #### Lyapunov pattern
-![](./img/loem3e-1.svg)
+![](./img/loem3e-1.png)
 
-![](./img/loem5e-1.svg)
+![](./img/loem5e-1.png)
 
-![](./img/loem7e-1.svg)
+![](./img/loem7e-1.png)
 
 ## Discussion
 1. Numberical solution makes approximation every step, but in chaos an arbitrarily small change, or perturbation, of the current trajectory may lead to significantly different future behavior. Any other approaches to this problem other than numerical method?
