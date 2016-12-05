@@ -32,3 +32,5 @@
   - [The Billiard Problem](/exercise_09)
 - [x] Exercise\_10:
   - [Planet Orbits under Centripetal Force](/exercise_10)
+- [x] Exercise\_11:
+  - [Chaotic Tumbling of Hyperion](/exercise_11)
