@@ -1,7 +1,7 @@
-# Chaos in the Driven Nonlinear Pendulum
+# Chaotic Tumbling of Hyperion
 
 ## Abstract
-With **Euler-Cromer Method** and **bisection method**, it is easy to achieve a better solution to the driven nonlinear pendulum problem. And it is of great interest to study the **deterministic chaos**. In this exercise, I construct the Poincaré section and estimate the Lyapunov exponents.
+With **Euler-Cromer Method** and **bisection method**, it is easy to achieve a better solution to the *Chaotic Tumbling of Hyperion* problem. And it is of great interest to study the **deterministic chaos**. In this exercise, I construct the Poincaré section and estimate the Lyapunov exponents.
 
 ## Background
 
@@ -36,7 +36,7 @@ The difference with the standard Euler method is that the semi-implicit Euler me
 
 Applying the method with negative time step to the computation of {\displaystyle (x_{n},v_{n})} (x_n,v_n) from {\displaystyle (x_{n+1},v_{n+1})} (x_{n+1},v_{n+1}) and rearranging leads to the second variant of the semi-implicit Euler method
 
-![](https://wikimedia.org/api/rest_v1/media/math/render/svg/5345b72f06cf73c459fa753eb60f46b693f1dfbf)
+![]ihttps://wikimedia.org/api/rest_v1/media/math/render/svg/5345b72f06cf73c459fa753eb60f46b693f1dfbf)
 
 which has similar properties.
 
@@ -44,20 +44,24 @@ The semi-implicit Euler is a first-order integrator, just as the standard Euler 
 
 ![](https://upload.wikimedia.org/wikipedia/commons/f/f9/Symplectic_Euler_stability_region.jpeg)
 
-### Kepler's laws of planetary motion
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Kepler_laws_diagram.svg/630px-Kepler_laws_diagram.svg.png)
-In astronomy, Kepler's laws of planetary motion are three scientific laws describing the motion of planets around the Sun.
-> 1. The orbit of a planet is an ellipse with the Sun at one of the two foci.
-> 2. A line segment joining a planet and the Sun sweeps out equal areas during equal intervals of time.
-> 3. The square of the orbital period of a planet is proportional to the cube of the semi-major axis of its orbit.
+### Hyperion
+[NASA -- Encountering the Hyperion](https://www.nasa.gov/mission_pages/cassini/multimedia/pia06243.html)
+![](./img/saturn.gif)
+> From Wikipedia, the free encyclopedia
 
-Most planetary orbits are nearly circular, and careful observation and calculation are required in order to establish that they are not perfectly circular. Calculations of the orbit of Mars, whose published values are somewhat suspect, indicated an elliptical orbit. From this, Johannes Kepler inferred that other bodies in the Solar System, including those farther away from the Sun, also have elliptical orbits.
+Hyperion (/haɪˈpɪəriən/;Greek: Ὑπερίων), also known as Saturn VII (7), is a moon of Saturn discovered by William Cranch Bond, George Phillips Bond and William Lassell in 1848. It is distinguished by its irregular shape, its chaotic rotation, and its unexplained sponge-like appearance. It was the first non-round moon to be discovered.
 
-Kepler's work (published between 1609 and 1619) improved the heliocentric theory of Nicolaus Copernicus, explaining how the planets' speeds varied, and using elliptical orbits rather than circular orbits with epicycles.
+#### Physical characteristics
+![](./img/hyperion.png)
+1. Shape   
+Hyperion is one of the largest bodies known to be highly irregularly shaped (non-ellipsoidal, i.e. not in hydrostatic equilibrium) in the Solar System.[c] The only larger moon known to be irregular in shape is Neptune's moon Proteus. Hyperion has about 15% of the mass of Mimas, the least massive known ellipsoidal body. The largest crater on Hyperion is approximately 121.57 km (75.54 mi) in diameter and 10.2 km (6.3 mi) deep. A possible explanation for the irregular shape is that Hyperion is a fragment of a larger body that was broken up by a large impact in the distant past. A proto-Hyperion could have been 350–1,000 km (220–620 mi) in diameter. Over about 1,000 years, ejecta from a presumed Hyperion breakup would have impacted Titan at low speeds, building up volatiles in the atmosphere of Titan.
+2. Composition   
+Like most of Saturn's moons, Hyperion's low density indicates that it is composed largely of water ice with only a small amount of rock. It is thought that Hyperion may be similar to a loosely accreted pile of rubble in its physical composition. However, unlike most of Saturn's moons, Hyperion has a low albedo (0.2–0.3), indicating that it is covered by at least a thin layer of dark material. This may be material from Phoebe (which is much darker) that got past Iapetus. Hyperion is redder than Phoebe and closely matches the color of the dark material on Iapetus.
+3. Rotation   
+The Voyager 2 images and subsequent ground-based photometry indicated that Hyperion's rotation is chaotic, that is, its axis of rotation wobbles so much that its orientation in space is unpredictable. Its Lyapunov time is around 30 days.[16] Hyperion, together with Pluto's moons Nix and Hydra,[17][18] is among only a few moons in the Solar System known to rotate chaotically, although it is expected to be common in binary asteroids.[19] It is also the only regular planetary natural satellite in the Solar System known not to be tidally locked.
 
-Isaac Newton showed in 1687 that relationships like Kepler's would apply in the Solar System to a good approximation, as a consequence of his own laws of motion and law of universal gravitation.
+Hyperion is unique among the large moons in that it is very irregularly shaped, has a fairly eccentric orbit, and is near a much larger moon, Titan. These factors combine to restrict the set of conditions under which a stable rotation is possible. The 3:4 orbital resonance between Titan and Hyperion may also make a chaotic rotation more likely. The fact that its rotation is not locked probably accounts for the relative uniformity of Hyperion's surface, in contrast to many of Saturn's other moons, which have contrasting trailing and leading hemispheres.[20]
 
-Kepler's laws are part of the foundation of modern astronomy and physics.
 
 ## Problem Description
 Here is **not** the problem in the book(page 65).
@@ -74,67 +78,70 @@ What's more, this is just the tip of the iceberg.
 ### Problem Analysis
 These problem are similar to those in the book. All we need to do is follow its idea and everything is OK. But, we still need to pay to your coding style!
 
+**Polar oordinates** is applied here. 
+
 ## Results
-### Different Orbits with different exponents
-Let's have a look at different kinds of orbits under central force field
-#### When exponent equals -4
-![](./img/e-4.png)
-#### When exponent equals -3
-![](./img/e-3.png)
-#### When exponent equals -2
-Here you can see 3 kinds of orbits: circle, ellipse and hyperbola.
-![](./img/e-2.png)
-#### When exponent equals -1
-![](./img/e-1.png)
-#### When exponent equals 0
-![](./img/e-0.png)
-#### When exponent equals 1
-Always ellipse
-![](./img/e1.png)
-#### When exponent equals 2
-![](./img/e2.png)
-#### When exponent equals 3
-![](./img/e3.png)
+### Circular orbit
+Results under different ratios of m1 and m2.
+#### Theta and omega versus time
+![](./img/me-4.svg)
 
-We can find that plot patterns change along with different driven force.
+![](./img/me-3.svg)
 
-Pay attention that -2 is Universal gravitation while 1 is Harmonic oscillator.
+![](./img/me-2.svg)
 
-### Verify Kepler's law
-This is the elliptical orbit we wre going to check.
-![](./img/el.png)
+![](./img/me-1.svg)
 
-Radius versus time
-![](./img/elr.png)
+![](./img/m2e-1.svg)
 
-Radius versus angle
-![](./img/elra.png)
+![](./img/m5e-1.svg)
 
-#### the First Law
-We can compare the orbit of the numeriacl result and the real ellipse with the same eccentricity ratio
-![](./img/el2.png)
+#### Omega versus theta 
+![](./img/ome-4.svg)
 
-And the radius pattern
-![](./img/el2r.png)
+![](./img/ome-3.svg)
 
-#### the Second Law
-Area versus time
-![](./img/el1.png)
+![](./img/ome-2.svg)
 
-#### the Third Law
-T^3 versus A^2
-![](./img/el3.png)
+![](./img/ome-1.svg)
 
+![](./img/om2e-1.svg)
 
-## Sad Story
-Under the dark theme, the font-color in the screen is white:
-![](./img/scrst.png)
+![](./img/om3e-1.svg)
 
-But what I have stored are figures with black font-color and you can't see my title and labels:
-![](./img/el3.png)
+![](./img/om5e-1.svg)
 
-And I am too lazy to draw them again.
-However, you can enjoy my [code](./orbit.py).
+### Elliptical orbit
+Results under different ratios of m1 and m2.
+
+#### Theta and omega versus time
+![](./img/em1e-1.svg)
+
+![](./img/em3e-1.svg)
+
+![](./img/em5e-1.svg)
+
+![](./img/em7e-1.svg)
+
+![](./img/em9e-1.svg)
+
+#### Omega versus theta 
+![](./img/oem1e-1.svg)
+
+![](./img/oem3e-1.svg)
+
+![](./img/oem5e-1.svg)
+
+![](./img/oem7e-1.svg)
+
+![](./img/oem9e-1.svg)
+
+#### Lyapunov pattern
+![](./img/loem3e-1.svg)
+
+![](./img/loem5e-1.svg)
+
+![](./img/loem7e-1.svg)
 
 ## Discussion
 1. Numberical solution makes approximation every step, but in chaos an arbitrarily small change, or perturbation, of the current trajectory may lead to significantly different future behavior. Any other approaches to this problem other than numerical method?
