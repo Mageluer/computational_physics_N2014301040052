@@ -34,3 +34,5 @@
   - [Planet Orbits under Centripetal Force](/exercise_10)
 - [x] Exercise\_11:
   - [Chaotic Tumbling of Hyperion](/exercise_11)
+- [x] Exercise\_12:
+  - [Solutions to Laplace Function with Relaxation Method](/exercise_12)
