@@ -92,6 +92,15 @@ These problem are similar to those in the book. All we need to do is follow its 
 
 ![](./img/s-4.png)
 
+![](./img/ss-1.png)
+
+![](./img/ss-2.png)
+
+![](./img/ss-3.png)
+
+![](./img/ss-4.png)
+
+
 #### N versus alpha
 ![](./img/cs.png)
 

@@ -13,8 +13,9 @@ from copy import deepcopy
 
 class relaxation:
     def __init__(self, L=12, alpha=1):
-        self.L, self.N, self.deltaV, self.convergence, self.alpha, self.V= L, 0, 1, 1e-3, alpha, [[0 for i in range(L+1)] for j in range(L+1)]
-        self.V[int(L/3)],self.V[int(L*2/3)]=[0]*int(L/3)+[2]*(L+1-2*int(L/3))+[0]*int(L/3),[0]*int(L/3)+[-1]*(L+1-2*int(L/3))+[0]*int(L/3)
+        self.L, self.N, self.deltaV, self.convergence, self.alpha, self.V= L, 0, 1, 1e-5, alpha, [[0 for i in range(L+1)] for j in range(L+1)]
+        self.V[int(L/3)],self.V[int(L*2/3)]=[0]*int(L/3)+[1]*7+[-1]*7+[1]*7+[0]*int(L/3),[0]*int(L/3)+[-1]*7+[1]*7+[-1]*7+[0]*int(L/3)
+        #self.V[int(L/3)],self.V[int(L*2/3)]=[0]*int(L/3)+[1]*(L+1-2*int(L/3))+[0]*int(L/3),[0]*int(L/3)+[-1]*(L+1-2*int(L/3))+[0]*int(L/3)
     def calculate(self):
         while abs(self.deltaV) > self.convergence:
             self.deltaV,self.N=0,self.N+1
@@ -25,8 +26,7 @@ class relaxation:
             print self.N,self.deltaV
         
 #######  不如来画图  #########
-"""
-aa=relaxation(L=30,alpha=1)
+aa=relaxation(L=60,alpha=1.5)
 aa.calculate()
 x=np.linspace(-1,1,aa.L+1)
 y=np.linspace(-1,1,aa.L+1)
@@ -65,4 +65,5 @@ pl.xlabel(r"$\alpha$")
 pl.ylabel(r'$N$')
 pl.legend(loc='best')
 pl.title(r'convergence speed versus $\alpha$')
+"""
 pl.show()
