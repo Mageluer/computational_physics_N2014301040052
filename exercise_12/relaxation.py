@@ -13,28 +13,29 @@ from copy import deepcopy
 
 class relaxation:
     def __init__(self, L=12, alpha=1):
-        self.L, self.N, self.deltaV, self.convergence, self.alpha, self.V= L, 0, 1, 1e-5, alpha, [[0 for i in range(L+1)] for j in range(L+1)]
-        self.Ex,self.Ey,self.E,self.V[int(L/3)],self.V[int(L*2/3)]=deepcopy(self.V),deepcopy(self.V),deepcopy(self.V),[0]*int(L/3)+[2]*(L+1-2*int(L/3))+[0]*int(L/3),[0]*int(L/3)+[-1]*(L+1-2*int(L/3))+[0]*int(L/3)
+        self.L, self.N, self.deltaV, self.convergence, self.alpha, self.V= L, 0, 1, 1e-3, alpha, [[0 for i in range(L+1)] for j in range(L+1)]
+        self.V[int(L/3)],self.V[int(L*2/3)]=[0]*int(L/3)+[2]*(L+1-2*int(L/3))+[0]*int(L/3),[0]*int(L/3)+[-1]*(L+1-2*int(L/3))+[0]*int(L/3)
     def calculate(self):
         while abs(self.deltaV) > self.convergence:
-            self.deltaV=0
+            self.deltaV,self.N=0,self.N+1
             for i in range(1,self.L):
                 for j in range(1,self.L):
                     if not (i in (int(self.L/3), int(self.L*2/3)) and j in range(int(self.L/3),self.L+1-int(self.L/3))):
                         self.deltaV,self.V[i][j]=self.deltaV+abs((self.V[i-1][j]+self.V[i+1][j]+self.V[i][j-1]+self.V[i][j+1])/4-self.V[i][j]),self.alpha*(self.V[i-1][j]+self.V[i+1][j]+self.V[i][j-1]+self.V[i][j+1])/4+(1-self.alpha)*self.V[i][j]
-            self.N+=1
             print self.N,self.deltaV
-        for i in range(1,self.L):
-            for j in range(1,self.L):
-                self.Ex[i][j],self.Ey[i][j]=(self.V[i-1][j]-self.V[i+1][j])/2,(self.V[i][j-1]-self.V[i][j+1])/2
-                self.E[i][j]=np.sqrt(self.Ex[i][j]**2+self.Ey[i][j]**2)
         
 #######  不如来画图  #########
-aa=relaxation(L=90,alpha=1)
+"""
+aa=relaxation(L=30,alpha=1)
 aa.calculate()
 x=np.linspace(-1,1,aa.L+1)
 y=np.linspace(-1,1,aa.L+1)
 X,Y=np.meshgrid(x,y)
+Ex,Ey,E=deepcopy(aa.V),deepcopy(aa.V),deepcopy(aa.V)
+for i in range(1,aa.L):
+    for j in range(1,aa.L):
+        Ex[i][j],Ey[i][j]=(aa.V[i-1][j]-aa.V[i+1][j])/2,(aa.V[i][j-1]-aa.V[i][j+1])/2
+        E[i][j]=np.sqrt(Ex[i][j]**2+Ey[i][j]**2)
 fig1=pl.figure(1)
 pl.ax=Axes3D(fig1)
 pl.ax.plot_surface(X, Y, aa.V, rstride=5, cstride=5, cmap='rainbow')
@@ -49,6 +50,19 @@ fig3=pl.figure(3)
 surf3=pl.contour(X,Y,aa.V)
 pl.clabel(surf3,inline=1, fontsize=10, cmap='jet')
 fig4=pl.figure(4)
-pl.quiver(X,Y,aa.Ex,aa.Ey,aa.E,cmap='rainbow',linewidth=2,headlength=7)
+pl.quiver(X,Y,Ex,Ey,E,cmap='rainbow',linewidth=2,headlength=7)
 pl.colorbar()
+"""
+for L,style in zip([30,36,42],['r-s','g-o','b-d']):
+    rap,rN=[],[]
+    for alpha in sorted(np.append(np.linspace(1.5,1.9,20),2/(1+np.pi/L))):
+        aa=relaxation(L=L,alpha=alpha)
+        aa.calculate()
+        rap.append(alpha)
+        rN.append(aa.N)
+    pl.plot(rap,rN,style,label=r'L=%d' % L)
+pl.xlabel(r"$\alpha$")
+pl.ylabel(r'$N$')
+pl.legend(loc='best')
+pl.title(r'convergence speed versus $\alpha$')
 pl.show()

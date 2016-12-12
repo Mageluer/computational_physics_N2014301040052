@@ -1,67 +1,33 @@
-# Chaotic Tumbling of Hyperion
+# Solutions to Laplace Function with Relaxation Method
 
 ## Abstract
-With **Euler-Cromer Method** and **bisection method**, it is easy to achieve a better solution to the *Chaotic Tumbling of Hyperion* problem. And it is of great interest to study the **deterministic chaos**. In this exercise, I construct the Poincaré section and estimate the Lyapunov exponents.
+With **Relaxation (iterative method)**, **Gauss–Seidel method**, **Successive over-relaxation** and **Jacobi method**, it is easy to achieve a better solution to the *Laplace function* problem. And it is of great interest to study the **Electrical Field**. In this exercise, I calculate the electrical field.
 
 ## Background
 
-### Euler-Cromer method
-> From [Wikipedia](https://en.wikipedia.org/wiki/Semi-implicit_Euler_method), the free encyclopedia
+### Relaxation (iterative method)
+> From [Wikipedia](https://en.wikipedia.org/wiki/Relaxation_(iterative_method)), the free encyclopedia
 
-In mathematics, the semi-implicit Euler method, also called symplectic Euler, semi-explicit Euler, Euler–Cromer, and Newton–Størmer–Verlet (NSV), is a modification of the Euler method for solving Hamilton's equations, a system of ordinary differential equations that arises in classical mechanics. It is a symplectic integrator and hence it yields better results than the standard Euler method.
+In numerical mathematics, relaxation methods are iterative methods for solving systems of equations, including nonlinear systems.
 
-#### Setting
-The semi-implicit Euler method can be applied to a pair of differential equations of the form
+Relaxation methods were developed for solving large sparse linear systems, which arose as finite-difference discretizations of differential equations. They are also used for the solution of linear equations for linear least-squares problems and also for systems of linear inequalities, such as those arising in linear programming. They have also been developed for solving nonlinear systems of equations.
 
-![](https://wikimedia.org/api/rest_v1/media/math/render/svg/42db9fc0c412f7eb6cb328dbab614907f839c4d5)
+Relaxation methods are important especially in the solution of linear systems used to model elliptic partial differential equations, such as Laplace's equation and its generalization, Poisson's equation. These equations describe boundary-value problems, in which the solution-function's values are specified on boundary of a domain; the problem is to compute a solution also on its interior. Relaxation methods are used to solve the linear equations resulting from a discretization of the differential equation, for example by finite differences.
 
-![](https://wikimedia.org/api/rest_v1/media/math/render/svg/38faa28a39c42d118cf177c5dc567852d7457cf8)
+These iterative methods of relaxation should not be confused with "relaxations" in mathematical optimization, which approximate a difficult problem by a simpler problem, whose "relaxed" solution provides information about the solution of the original problem.
 
-where f and g are given functions. Here, x and v may be either scalars or vectors. The equations of motion in Hamiltonian mechanics take this form if the Hamiltonian is of the form
+### Gauss–Seidel method
+In numerical linear algebra, the Gauss–Seidel method, also known as the Liebmann method or the method of successive displacement, is an iterative method used to solve a linear system of equations. It is named after the German mathematicians Carl Friedrich Gauss and Philipp Ludwig von Seidel, and is similar to the Jacobi method. Though it can be applied to any matrix with non-zero elements on the diagonals, convergence is only guaranteed if the matrix is either diagonally dominant, or symmetric and positive definite. It was only mentioned in a private letter from Gauss to his student Gerling in 1823. A publication was not delivered before 1874 by Seidel.
 
-![](https://wikimedia.org/api/rest_v1/media/math/render/svg/bbf7bda8bb37b7e8b54c00ed8121bb740a1a13d7)
+### Successive over-relaxation
+In numerical linear algebra, the method of successive over-relaxation (SOR) is a variant of the Gauss–Seidel method for solving a linear system of equations, resulting in faster convergence. A similar method can be used for any slowly converging iterative process.
 
-The differential equations are to be solved with the initial condition
+It was devised simultaneously by David M. Young, Jr. and by Stanley P. Frankel in 1950 for the purpose of automatically solving linear systems on digital computers. Over-relaxation methods had been used before the work of Young and Frankel. An example is the method of Lewis Fry Richardson, and the methods developed by R. V. Southwell. However, these methods were designed for computation by human calculators, and they required some expertise to ensure convergence to the solution which made them inapplicable for programming on digital computers. These aspects are discussed in the thesis of David M. Young, Jr.
 
-![](https://wikimedia.org/api/rest_v1/media/math/render/svg/0ae7811a6d4e435f51969df2000ab5e7a1e44e75)
+### Electric field
+An electric field is a vector field that associates to each point in space the Coulomb force that would be experienced per unit of electric charge, by an infinitesimal test charge at that point. Electric fields converge and diverge at electric charges and can be induced by time-varying magnetic fields. The electric field combines with the magnetic field to form the electromagnetic field.
 
-#### The method
-The semi-implicit Euler method produces an approximate discrete solution by iterating
-
-![](https://wikimedia.org/api/rest_v1/media/math/render/svg/96b091ba914ac916145d3b4d9361fd16d0842531)
-
-where Δt is the time step and tn = t0 + nΔt is the time after n steps.
-
-The difference with the standard Euler method is that the semi-implicit Euler method uses vn+1 in the equation for xn+1, while the Euler method uses vn.
-
-Applying the method with negative time step to the computation of {\displaystyle (x_{n},v_{n})} (x_n,v_n) from {\displaystyle (x_{n+1},v_{n+1})} (x_{n+1},v_{n+1}) and rearranging leads to the second variant of the semi-implicit Euler method
-
-![]ihttps://wikimedia.org/api/rest_v1/media/math/render/svg/5345b72f06cf73c459fa753eb60f46b693f1dfbf)
-
-which has similar properties.
-
-The semi-implicit Euler is a first-order integrator, just as the standard Euler method. This means that it commits a global error of the order of Δt. However, the semi-implicit Euler method is a symplectic integrator, unlike the standard method. As a consequence, the semi-implicit Euler method almost conserves the energy (when the Hamiltonian is time-independent). Often, the energy increases steadily when the standard Euler method is applied, making it far less accurate.
-
-![](https://upload.wikimedia.org/wikipedia/commons/f/f9/Symplectic_Euler_stability_region.jpeg)
-
-### Hyperion
-[NASA -- Encountering the Hyperion](https://www.nasa.gov/mission_pages/cassini/multimedia/pia06243.html)
-![](./img/saturn.gif)
-> From Wikipedia, the free encyclopedia
-
-Hyperion (/haɪˈpɪəriən/;Greek: Ὑπερίων), also known as Saturn VII (7), is a moon of Saturn discovered by William Cranch Bond, George Phillips Bond and William Lassell in 1848. It is distinguished by its irregular shape, its chaotic rotation, and its unexplained sponge-like appearance. It was the first non-round moon to be discovered.
-
-#### Physical characteristics
-![](./img/hyperion.jpg)
-1. Shape   
-Hyperion is one of the largest bodies known to be highly irregularly shaped (non-ellipsoidal, i.e. not in hydrostatic equilibrium) in the Solar System.[c] The only larger moon known to be irregular in shape is Neptune's moon Proteus. Hyperion has about 15% of the mass of Mimas, the least massive known ellipsoidal body. The largest crater on Hyperion is approximately 121.57 km (75.54 mi) in diameter and 10.2 km (6.3 mi) deep. A possible explanation for the irregular shape is that Hyperion is a fragment of a larger body that was broken up by a large impact in the distant past. A proto-Hyperion could have been 350–1,000 km (220–620 mi) in diameter. Over about 1,000 years, ejecta from a presumed Hyperion breakup would have impacted Titan at low speeds, building up volatiles in the atmosphere of Titan.
-2. Composition   
-Like most of Saturn's moons, Hyperion's low density indicates that it is composed largely of water ice with only a small amount of rock. It is thought that Hyperion may be similar to a loosely accreted pile of rubble in its physical composition. However, unlike most of Saturn's moons, Hyperion has a low albedo (0.2–0.3), indicating that it is covered by at least a thin layer of dark material. This may be material from Phoebe (which is much darker) that got past Iapetus. Hyperion is redder than Phoebe and closely matches the color of the dark material on Iapetus.
-3. Rotation   
-The Voyager 2 images and subsequent ground-based photometry indicated that Hyperion's rotation is chaotic, that is, its axis of rotation wobbles so much that its orientation in space is unpredictable. Its Lyapunov time is around 30 days.[16] Hyperion, together with Pluto's moons Nix and Hydra,[17][18] is among only a few moons in the Solar System known to rotate chaotically, although it is expected to be common in binary asteroids.[19] It is also the only regular planetary natural satellite in the Solar System known not to be tidally locked.
-
-Hyperion is unique among the large moons in that it is very irregularly shaped, has a fairly eccentric orbit, and is near a much larger moon, Titan. These factors combine to restrict the set of conditions under which a stable rotation is possible. The 3:4 orbital resonance between Titan and Hyperion may also make a chaotic rotation more likely. The fact that its rotation is not locked probably accounts for the relative uniformity of Hyperion's surface, in contrast to many of Saturn's other moons, which have contrasting trailing and leading hemispheres.[20]
-
+![](./img/elc.jpg)
 
 ## Problem Description
 Here is **not** the problem in the book(page 65).
@@ -78,70 +44,62 @@ What's more, this is just the tip of the iceberg.
 ### Problem Analysis
 These problem are similar to those in the book. All we need to do is follow its idea and everything is OK. But, we still need to pay to your coding style!
 
-**Polar oordinates** is applied here. 
 
 ## Results
-### Circular orbit
-Results under different ratios of m1 and m2.
-#### Theta and omega versus time
-![](./img/me-4.png)
+### Different L gives different precision
+#### L=12
+![](./img/12-1.png)
 
-![](./img/me-3.png)
+![](./img/12-2.png)
 
-![](./img/me-2.png)
+![](./img/12-3.png)
 
-![](./img/me-1.png)
+![](./img/12-4.png)
 
-![](./img/m2e-1.png)
+#### L=30
+![](./img/30-1.png)
 
-![](./img/m5e-1.png)
+![](./img/30-2.png)
 
-#### Omega versus theta 
-![](./img/ome-4.png)
+![](./img/30-3.png)
 
-![](./img/ome-3.png)
+![](./img/30-4.png)
 
-![](./img/ome-2.png)
+#### L=60
+![](./img/60-1.png)
 
-![](./img/ome-1.png)
+![](./img/60-2.png)
 
-![](./img/om2e-1.png)
+![](./img/60-3.png)
 
-![](./img/om3e-1.png)
+![](./img/60-4.png)
 
-![](./img/om5e-1.png)
+#### L=90
+![](./img/90-1.png)
 
-### Elliptical orbit
-Results under different ratios of m1 and m2.
+![](./img/90-2.png)
 
-#### Theta and omega versus time
-![](./img/em1e-1.png)
+![](./img/90-3.png)
 
-![](./img/em3e-1.png)
+![](./img/90-4.png)
 
-![](./img/em5e-1.png)
+### Change the boundary condition
+![](./img/s-1.png)
 
-![](./img/em7e-1.png)
+![](./img/s-2.png)
 
-![](./img/em9e-1.png)
+![](./img/s-3.png)
 
-#### Omega versus theta 
-![](./img/oem1e-1.png)
+![](./img/s-4.png)
 
-![](./img/oem3e-1.png)
+#### N versus alpha
+![](./img/cs.png)
 
-![](./img/oem5e-1.png)
-
-![](./img/oem7e-1.png)
-
-![](./img/oem9e-1.png)
-
-#### Lyapunov pattern
-![](./img/loem3e-1.png)
-
-![](./img/loem5e-1.png)
-
-![](./img/loem7e-1.png)
+## Attention
+No one enjoying debugging this kind of error:   
+```python
+a=[[0]*100]*100
+```
 
 ## Discussion
 1. Numberical solution makes approximation every step, but in chaos an arbitrarily small change, or perturbation, of the current trajectory may lead to significantly different future behavior. Any other approaches to this problem other than numerical method?
