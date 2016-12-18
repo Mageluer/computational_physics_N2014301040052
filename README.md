@@ -36,3 +36,5 @@
   - [Chaotic Tumbling of Hyperion](/exercise_11)
 - [x] Exercise\_12:
   - [Solutions to Laplace Function with Relaxation Method](/exercise_12)
+- [x] Exercise\_13:
+  - [Waves on the String and Frequency Spectrum](/exercise_13)
