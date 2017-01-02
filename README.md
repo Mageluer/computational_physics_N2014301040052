@@ -38,3 +38,8 @@
   - [Solutions to Laplace Function with Relaxation Method](/exercise_12)
 - [x] Exercise\_13:
   - [Waves on the String and Frequency Spectrum](/exercise_13)
+
+## Final Homework
+- [x] Final Homework
+  - [Python Machine Learning](https://mageluer.github.io/blog/python-machine-learning)
+  - [source file](/final)
