@@ -25,14 +25,14 @@ In this age of modern technology, there is one resource that we have in abundanc
 ### 1.2 The three different types of machine learning
 In this section, we will take a look at the three types of machine learning: *supervised learning*, *unsupervised learning*, and *reinforcement learning*. We will learn about the fundamental differences between the three different learning types and, using conceptual examples, we will develop an intuition for the practical problem domains where these can be applied:
 
-![three_types_of_ML](https://i.imgur.com/dnuTarx.png)
+![three_types_of_ML](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/three_types_of_ML.png)
 
 #### 1.2.1 Making predictions about the future with supervised learning
 The main goal in supervised learning is to learn a model from labeled *training* data that allows us to make predictions about unseen or future data. Here, the term *supervised* refers to a set of samples where the desired output signals (labels) are already known.
 
 Considering the example of e-mail spam filtering, we can train a model using a supervised machine learning algorithm on a corpus of labeled e-mail, e-mail that are correctly marked as spam or not-spam, to predict whether a new e-mail belongs to either of the two categories. A supervised learning task with discrete *class labels*, such as in the previous e-mail spam-filtering example, is also called a *classification* task. Another subcategory of supervised learning is *regression*, where the outcome signal is a continuous value:
 
-![e-mail_spam_filtering](https://i.imgur.com/akgq1u1.png)
+![e-mail_spam_filtering](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/e-mail_spam_filtering.png)
 
 ##### 1.2.1.1 Classification for predicting class labels
 Classification is a subcategory of supervised learning where the goal is to predict the categorical class labels of new instances based on past observations. Those class labels are discrete, in-ordered values that can be understood as the group memberships of the instances. The previously mentioned example of e-mail-spam detection represents a typical example of a binary classification task, where the machine learning algorithm learns a set of rules in order to distinguish between two possible classes: spam and non-spam e-mail.
@@ -40,7 +40,7 @@ Classification is a subcategory of supervised learning where the goal is to pred
 However, the set of class labels does not have to be of a binary nature. The predictive model learned by a supervised learning algorithm can assign any class label that was presented in the training dataset to a new, unlabeled instance. A typical example of a *multi-class classification* task is handwritten character recognition. Here, we could collect a training data-set that consists of multiple handwritten examples of each letter in the alphabet. Now, if a user provides a new handwritten character via an input device, our predictive model will be able to predict the correct letter in the alphabet with certain accuracy. However, our machine learning system would be unable to correctly recognize any of the digits zero to nine, for example, if they were not part of our training data sets.
 
 The following figure illustrates the concept of a binary classification task given 30 training samples: 15 training samples are labeled as *negative class* (circles) and 15 training samples are labeled as *positive class* (plus signs). In this scenario, our dataset is two-dimensional, which means that each sample has two values associated with it: $$x_1$$ and $$x_2$$ . Now, we can use a supervised machine learning algorithm to learn a rule—the decision boundary represented as a black dashed line—that can separate those two classes and classify new data into each of those two categories given its $$x_1$$ and $$x_2$$ values:
-![binary classification](https://i.imgur.com/7dQEulR.jpg)
+![binary classification](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/binary_classification.jpg)
 
 ##### 1.2.1.2 Regression for predicting continuous outcomes
 We learned in the previous section that the task of classification is to assign categorical, unordered labels to instances. A second type of supervised learning is the prediction of continuous outcomes, which is also called *regression analysis*. In regression analysis, we are given a number of *predictor* (explanatory) variables and a continuous response variable (outcome), and we try to find a relationship between those variables that allows us to predict an outcome.
@@ -51,14 +51,14 @@ For example, let's assume that we are interested in predicting the Math SAT scor
 
 The following figure illustrates the concept of *linear regression*. Given a predictor variable $$x$$ and a response variable $$y$$, we fit a straight line to this data that minimizes the distance—most commonly the average squared distance—between the sample points and the fitted line. We can now use the intercept and slope learned from this data to predict the outcome variable of new data:
 
-![linear regression](https://i.imgur.com/IRL6zs5.png)
+![linear regression](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/linear_regression.png)
 
 #### 1.2.2 Solving interactive problems with reinforcement learning
 Another type of machine learning is reinforcement learning. In reinforcement learning, the goal is to develop a system (*agent*) that improves its performance based on interactions with the *environment*. Since the information about the current state of the environment typically also includes a so-called *reward* signal, we can think of reinforcement learning as a field related to *supervised* learning. However, in reinforcement learning this feedback is not the correct ground truth label or value, but a measure of how well the action was measured by a *reward* function. Through the interaction with the environment, an agent can then use reinforcement learning to learn a series of actions that maximizes this reward via an exploratory trial-and-error approach or deliberative planning.
 
 A popular example of reinforcement learning is a chess engine. Here, the agent decides upon a series of moves depending on the state of the board (the environment), and the reward can be defined as *win* or *lose* at the end of the game:
 
-![reinforcement learning](https://i.imgur.com/enYEZeK.png)
+![reinforcement learning](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/reinforcement_learning.png)
 
 #### 1.2.3 Discovering hidden structures with unsupervised learning
 In supervised learning, we know the *right answer* beforehand when we train our model, and in reinforcement learning, we define a measure of *reward* for particular actions by the agent. In unsupervised learning, however, we are dealing with unlabeled data or data of *unknown structure*. Using unsupervised learning techniques, we are able to explore the structure of our data to extract meaningful information without the guidance of a known outcome variable or reward function.
@@ -68,30 +68,30 @@ In supervised learning, we know the *right answer* beforehand when we train our 
 
 The figure below illustrates how clustering can be applied to organizing unlabeled data into three distinct groups based on the similarity of their features $$x_1$$ and $$x_2$$ :
 
-![clustering](https://i.imgur.com/k0NpMSA.png)
+![clustering](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/clustering.png)
 
 ##### 1.2.3.2 Dimensionality reduction for data compression
 Another subfield of unsupervised learning is *dimensionality reduction*. Often we are working with data of high dimensionality—each observation comes with a high number of measurements—that can present a challenge for limited storage space and the computational performance of machine learning algorithms. Unsupervised dimensionality reduction is a commonly used approach in feature preprocessing to remove noise from data, which can also degrade the predictive performance of certain algorithms, and compress the data onto a smaller dimensional subspace while retaining most of the relevant information.
 
 Sometimes, dimensionality reduction can also be useful for visualizing data—for example, a high-dimensional feature set can be projected onto one-, two-, or three-dimensional feature spaces in order to visualize it via 3D- or 2D-scatterplots or histograms. The figure below shows an example where non-linear dimensionality reduction was applied to compress a 3D *Swiss Roll* onto a new 2D feature subspace:
 
-![dimensionality reduction](https://i.imgur.com/syqztQM.png)
+![dimensionality reduction](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/dimensionality_reduction.png)
 
 ### 1.3 An introduction to the basic terminology and notations
 Now that we have discussed the three broad categories of machine learning—supervised, unsupervised, and reinforcement learning—let us have a look at the basic terminology that we will be using in the next sections. The following table depicts an excerpt of the *Iris* dataset, which is a classic example in the field of machine learning. The Iris dataset contains the measurements of 150 iris flowers from three different species: *Setosa*, *Versicolor*, and *Viriginica*. Here, each flower sample represents one row in our data set, and the flower measurements in centimeters are stored as columns, which we also call the features of the data-set:
 
-![Iris](https://i.imgur.com/F9e1303.png)
+![Iris](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/Iris.png)
 
 To keep the notation and implementation simple yet efficient, we will make use of some of the basics of *linear algebra*. In the following sections, we will use a *matrix* and *vector* notation to refer to our data. We will follow the common convention to represent each sample as separate row in a feature matrix $$X$$ , where each feature is stored as a separate column.
 
 The Iris dataset, consisting of 150 samples and 4 features, can then be written as a 150 × 4 matrix $$X\in\mathbb{R}^{150\times4}$$ :
 
-![Iris dataset](https://i.imgur.com/a7oGhle.png)
+![Iris dataset](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/Iris_dataset.png)
 
 ### 1.4 A road map for building machine learning systems
 In the previous sections, we discussed the basic concepts of machine learning and the three different types of learning. In this section, we will discuss other important parts of a machine learning system accompanying the learning algorithm. The diagram below shows a typical workflow diagram for using machine learning in *predictive modeling*, which we will discuss in the following subsections:
 
-![roadmap](https://i.imgur.com/OZr05RK.png)
+![roadmap](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/roadmap.png)
 
 #### 1.4.1 Preprocessing – getting data into shape
 Raw data rarely comes in the form and shape that is necessary for the optimal performance of a learning algorithm. Thus, the *preprocessing* of the data is one of the most crucial steps in any machine learning application. If we take the Iris flower dataset from the previous section as an example, we could think of the raw data as a series of flower images from which we want to extract meaningful features. Useful features could be the color, the hue, the intensity of the flowers, the height, and the flower lengths and widths. Many machine learning algorithms also require that the selected features are on the same scale for optimal performance, which is often achieved by transforming the features in the range $$[0, 1]$$ or a standard normal distribution with zero mean and unit variance, as we will see in the later sections.
@@ -126,7 +126,7 @@ The topics that we will cover in this section are as follows:
 ### 2.1 Artificial neurons – a brief glimpse into the early history of machine learning
 Before we discuss the perceptron and related algorithms in more detail, let us take a brief tour through the early beginnings of machine learning. Trying to understand how the biological brain works to design artificial intelligence, Warren McCullock and Walter Pitts published the first concept of a simplified brain cell, the so-called *McCullock-Pitts (MCP) neuron*, in 1943 (W. S. McCulloch and W. Pitts. *A Logical Calculus of the Ideas Immanent in Nervous Activity.* The bulletin of mathematical biophysics, 5(4):115–133, 1943). Neurons are interconnected nerve cells in the brain that are involved in the processing and transmitting of chemical and electrical signals, which is illustrated in the following figure:
 
-![enter image description here](https://i.imgur.com/L6RDQ4s.png)
+![Neurons](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/Neurons.png)
 
 McCullock and Pitts described such a nerve cell as a simple logic gate with binary outputs; multiple signals arrive at the dendrites, are then integrated into the cell body, and, if the accumulated signal exceeds a certain threshold, an output signal is generated that will be passed on by the axon.
 
@@ -144,7 +144,7 @@ For simplicity, we can bring the threshold $$\theta$$ to the left side of the eq
 
 The following figure illustrates how the net input $$z =  w^Tx$$ is squashed into a binary output ($$-1$$ or $$1$$) by the activation function of the perceptron (left subfigure) and how it can be used to discriminate between two linearly separable classes (right subfigure):
 
-![thresholded perceptron](https://i.imgur.com/Uj0zNsZ.png)
+![thresholded perceptron](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/thresholded_perceptron.png)
 
 The whole idea behind the MCP neuron and Rosenblatt's *thresholded* perceptron model is to use a reductionist approach to mimic how a single neuron in the brain works: it either *fires* or it doesn't. Thus, Rosenblatt's initial perceptron rule is fairly simple and can be summarized by the following steps:
 
@@ -198,11 +198,11 @@ $$\Delta w_j = \eta( 1^{(i)} − -1^{(i)})2^{(i)}=(2)2^{(i)}=4$$
 
 It is important to note that the convergence of the perceptron is only guaranteed if the two classes are linearly separable and the learning rate is sufficiently small. If the two classes can't be separated by a linear decision boundary, we can set a maximum  number of passes over the training dataset (*epochs*) and/or a threshold for the number of tolerated misclassifications—the perceptron would never stop updating the weights otherwise:
 
-![linearly separable](https://i.imgur.com/glnwFfv.png)
+![linearly separable](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/linearly_separable.png)
 
 Now, before we jump into the implementation in the next section, let us summarize what we just learned in a simple figure that illustrates the general concept of the perceptron:
 
-![perceptron](https://i.imgur.com/9n8NKr1.png)
+![perceptron](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/perceptron.png)
 
 The preceding figure illustrates how the perceptron receives the inputs of a sample $$x$$ and combines them with the weights $$w$$ to compute the net input. The net input is then passed on to the activation function (here: the unit step function), which generates a binary output -1 or +1—the predicted class label of the sample. During the learning phase, this output is used to calculate the error of the prediction and update the weights.
 
@@ -319,7 +319,7 @@ pl.show()
 
 After executing the preceding code example we should now see the following scatterplot:
 
-![scatterplot](https://i.imgur.com/bNT2E8Y.png)
+![scatterplot](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/scatter_plot.png)
 
 Now it's time to train our perceptron algorithm on the Iris data subset that we just extracted. Also, we will plot the *misclassification error* for each epoch to check if the algorithm converged and found a decision boundary that separates the two Iris flower classes:
 
@@ -345,7 +345,7 @@ pl.show()
 
 After executing the preceding code, we should see the plot of the misclassification errors versus the number of epochs, as shown next:
 
-![misclassification errors](https://i.imgur.com/6MtLiAK.png)
+![misclassification errors](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/misclassification_errors.png)
 
 As we can see in the preceding plot, our perceptron already converged after the sixth epoch and should now be able to classify the training samples perfectly. Let us implement a small convenience function to visualize the decision boundaries for 2D datasets:
 
@@ -393,7 +393,7 @@ pl.show()
 
 After executing the preceding code example, we should now see a plot of the decision regions, as shown in the following figure:
 
-![decision boundary](https://i.imgur.com/yjQC3j4.png)
+![decision boundary](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/decision_boundaries.png)
 
 As we can see in the preceding plot, the perceptron learned a decision boundary that was able to classify all flower samples in the Iris training subset perfectly.
 
@@ -407,7 +407,7 @@ $$\phi (w^Tx) = w^Tx$$.
 
 While the linear activation function is used for learning the weights, a *quantizer*, which is similar to the unit step function that we have seen before, can then be used to predict the class labels, as illustrated in the following figure:
 
-![Adaline rule](https://i.imgur.com/V6uKTmX.png)
+![Adaline rule](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/Adaline_rule.png)
 
 If we compare the preceding figure to the illustration of the perceptron algorithm that we saw earlier, the difference is that we know to use the continuous valued output from the linear activation function to compute the model error and update the weights, rather than the binary class labels.
 
@@ -421,7 +421,7 @@ The term $$1/2$$ is just added for our convenience; it will make it easier to de
 
 As illustrated in the following figure, we can describe the principle behind gradient descent as *climbing down a hill* until a local or global cost minimum is reached. In each iteration, we take a step away from the gradient where the step size is determined by the value of the learning rate as well as the slope of the gradient:
 
-![gradient descent](https://i.imgur.com/Rsa8I8P.png)
+![gradient descent](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/gradient_descent.png)
 
 Using gradient descent, we can now update the weights by taking a step away from the gradient $$\Delta J ( w )$$ of our cost function $$J ( w )$$ :
 
@@ -553,11 +553,11 @@ pl.show()
 
 As we can see in the resulting cost function plots next, we encountered two different types of problems. The left chart shows what could happen if we choose a learning rate that is too large—instead of minimizing the cost function, the error becomes larger in every epoch because we *overshoot* the global minimum:
 
-![adaline-learning-rate](https://i.imgur.com/FxUMlXj.png)
+![adaline-learning-rate](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/adaline-learning-rate.png)
 
 Although we can see that the cost decreases when we look at the right plot, the chosen learning rate $$\eta = 0.0001$$ is so small that the algorithm would require a very large number of epochs to converge. The following figure illustrates how we change the value of a particular weight parameter to minimize the cost function J (left subfigure). The subfigure on the right illustrates what happens if we choose a learning rate that is too large, we overshoot the global minimum:
 
-![overshoot](https://i.imgur.com/QRtrFc0.png)
+![overshoot](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/overshoot.png)
 
 Many machine learning algorithms that we will encounter throughout this book require some sort of feature scaling for optimal performance.  Gradient descent is one of the many algorithms that benefit from feature scaling. Here, we will use a feature scaling method called *standardization,* which gives our data the property of a standard normal distribution. The mean of each feature is centered at value 0 and the feature column has a standard deviation of 1. For example, to standardize the $$j$$ th feature, we simply need to subtract the sample mean $$\mu_j$$ from every training sample and divide it by its standard deviation $$\sigma_j$$ :
 
@@ -631,8 +631,8 @@ pl.show()
 
 After executing the preceding code, we should see a figure of the decision regions as well as a plot of the declining cost, as shown in the following figure:
 
-![adaline-learning-rate-std](https://i.imgur.com/ciVq6xy.png)
-![gradient_descent_std](https://i.imgur.com/Rw2tNvU.png)
+![adaline-learning-rate-std](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/adaline-learning-rate-std.png)
+![gradient_descent_std](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/gradient_descent_std.png)
 
 As we can see in the preceding plots, the Adaline now converges after training on the standardized features using a learning rate $$\eta=0.01$$. However, note that the SSE remains non-zero even though all samples were classified correctly.
 
@@ -843,8 +843,8 @@ pl.show()
 
 The two plots that we obtain from executing the preceding code example are shown in the following figure:
 
-![Adaline SGD](https://i.imgur.com/p3Ypgxp.png)
-![Adaline SGD](https://i.imgur.com/baz1Kni.png)
+![Adaline SGD](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/Adaline_SGD.png)
+![Adaline_SGD_learning_rate](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/Adaline_SGD_learning_rate.png)
 
 As we can see, the average cost goes down pretty quickly, and the final decision boundary after 15 epochs looks similar to the batch gradient descent with Adaline. If we want to update our model—for example, in an on-line learning scenario with streaming data—we could simply call the `partial_fit` method on individual samples—for instance, `ada.partial_fit(X_std[0, :], y[0])` .
 
@@ -1019,7 +1019,7 @@ pl.show()
 
 As we can see in the resulting plot, the three flower classes cannot be perfectly separated by a linear decision boundaries:
 
-![trained perceptron](https://i.imgur.com/56Gb1Hu.png)
+![trained perceptron](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/trained_perceptron.png)
 
 We remember from our discussion in *Section 2, Training Machine Learning Algorithms for Classification*, that the perceptron algorithm never converges on datasets that aren't perfectly linearly separable, which is why the use of the perceptron algorithm is typically not recommended in practice. In the following sections, we will look at more powerful linear classifiers that converge to a cost minimum even if the classes are not perfectly linearly separable.
 
@@ -1067,14 +1067,14 @@ pl.show()
 As a result of executing the previous code example, we should now see the **S-shaped**
 (sigmoidal) curve:
 
-![sigmoid function](https://i.imgur.com/nREQwDS.png)
+![sigmoid function](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/sigmoid_function.png)
 
 We can see that $$\phi ( z )$$ approaches 1 if z goes towards infinity $$( z \to \infty )$$, since $$e^{-z}$$
 becomes very small for large values of z. Similarly, $$\phi ( z )$$ goes towards 0 for $$z \to -\infty$$ as the result of an increasingly large denominator. Thus, we conclude that this sigmoid function takes real number values as input and transforms them to values in the range $$[0, 1]$$ with an intercept at $$\phi ( z )=0.5$$ .
 
 To build some intuition for the logistic regression model, we can relate it to our previous Adaline implementation in *Section 2, Training Machine Learning Algorithms for Classification*. In Adaline, we used the identity function $$\phi ( z )=z$$  as the activation function. In logistic regression, this activation function simply becomes the sigmoid function that we defined earlier, which is illustrated in the following figure:
 
-![logit_activation_function](https://i.imgur.com/5lIkYAz.png)
+![logit_activation_function](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/logit_activation_function.png)
 
 The output of the sigmoid function is then interpreted as the probability of particular sample belonging to class 1 $$\phi(z)=P(y=1\vert x;w)$$ , given its features $$x$$ parameterized by the weights $$w$$. For example, if we compute $$\phi(z)=0.8$$ for a particular flower sample, it means that the chance that this sample is an Iris-Versicolor flower is 80 percent. Similarly, the probability that this flower is an Iris-Setosa flower can be calculated as
 $$P ( y = 0 \vert  x ; w ) = 1 − P ( y = 0 \vert  x ; w ) = 0.2$$ or 20 percent. The predicted probability can then
@@ -1118,7 +1118,7 @@ $$J ( \phi ( z ) , y; w ) = \left\{\begin{aligned}−  \log ( \phi ( z ) )\quad&
 The following plot illustrates the cost for the classification of a single-sample instance
 for different values of $$\phi ( z )$$:
 
-![likelihood phi](https://i.imgur.com/xpkYsFL.png)
+![likelihood phi](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/likelihood_phi.png)
 
 We can see that the cost approaches 0 (plain blue line) if we correctly predict that a sample belongs to class 1. Similarly, we can see on the y axis that the cost also approaches 0 if we correctly predict y = 0 (dashed line). However, if the prediction is wrong, the cost goes towards infinity. The moral is that we penalize wrong predictions with an increasingly larger cost.
 
@@ -1189,7 +1189,7 @@ pl.show()
 
 After fitting the model on the training data, we plotted the decision regions, training samples and test samples, as shown here:
 
-![logit regression](https://i.imgur.com/6UzFHwe.png)
+![logit regression](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/logit_regression.png)
 
 Looking at the preceding code that we used to train the LogisticRegression model, you might now be wondering, "What is this mysterious parameter C ?" We will get to this in a second, but let's briefly go over the concept of overfitting and regularization in the next subsection first.
 
@@ -1236,7 +1236,7 @@ Overfitting is a common problem in machine learning, where a model performs well
 
 Although we have only encountered linear models for classification so far, the problem of overfitting and underfitting can be best illustrated by using a more complex, nonlinear decision boundary as shown in the following figure:
 
-![overfitting](https://i.imgur.com/Jd7sWc6.png)
+![overfitting](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/overfitting.png)
 
 > Variance measures the consistency (or variability) of the model
 prediction for a particular sample instance if we would retrain
@@ -1307,12 +1307,12 @@ By executing the preceding code, we fitted ten logistic regression models with d
 
 As we can see in the resulting plot, the weight coefficients shrink if we decrease the parameter $$C$$, that is, if we increase the regularization strength:
 
-![L2_regulation](https://i.imgur.com/xz3y1yB.png)
+![L2_regulation](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/L2_regulation.png)
 
 ### 3.5 Maximum margin classification with support vector machines
 Another powerful and widely used learning algorithm is the **support vector machine (SVM)**, which can be considered as an extension of the perceptron. Using the perceptron algorithm, we minimized misclassification errors. However, in SVMs, our optimization objective is to maximize the **margin**. The margin is defined as the distance between the separating hyperplane (decision boundary) and the training samples that are closest to this hyperplane, which are the so-called **support vectors**. This is illustrated in the following figure:
 
-![SV](https://i.imgur.com/XJ3XlRI.png)
+![SV](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/SV.png)
 
 #### 3.5.1 Maximum margin intuition
 The rationale behind having decision boundaries with large margins is that they tend to have a lower generalization error whereas models with small margins are more prone to overfitting. To get an intuition for the margin maximization, let's take a closer look at those *positive and negative* hyperplanes that are parallel to the decision boundary, which can be expressed as follows:
@@ -1356,7 +1356,7 @@ $$\frac{1}{2}\vert \vert w\vert \vert ^2+C\left(\sum_i\xi^{(i)}\right)$$
 
 Using the variable $$C$$ , we can then control the penalty for misclassification. Large values of $$C$$ correspond to large error penalties whereas we are less strict about misclassification errors if we choose smaller values for $$C$$ . We can then we use the parameter $$C$$ to control the width of the margin and therefore tune the bias-variance trade-off as illustrated in the following figure:
 
-![slack_variable](https://i.imgur.com/Nl4z2le.png)
+![slack_variable](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/slack_variable.png)
 
 This concept is related to regularization, which we discussed previously in the context of regularized regression where increasing the value of $$C$$ increases the bias and lowers the variance of the model.
 
@@ -1422,7 +1422,7 @@ pl.show()
 
 The decision regions of the SVM visualized after executing the preceding code example are shown in the following plot:
 
-![svm](https://i.imgur.com/v1u0UEP.png)
+![svm](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/svm.png)
 
 > **Logistic regression versus SVM**
 In practical classification tasks, linear logistic regression and
@@ -1471,7 +1471,7 @@ pl.show()
 
 After executing the code, we will have an XOR dataset with random noise, as shown in the following figure:
 
-![XOR](https://i.imgur.com/XJUFP8g.png)
+![XOR](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/XOR_dataset.png)
 
 Obviously, we would not be able to separate samples from the positive and negative class very well using a linear hyperplane as the decision boundary via the linear logistic regression or linear SVM model that we discussed in earlier sections.
 
@@ -1481,7 +1481,7 @@ $$\phi ( x_1 , x_2 ) = ( z_1 , z_2 , z_3 ) = ( x _1 , x_2 , x_1^2 + x_2^2 )$$
 
 This allows us to separate the two classes shown in the plot via a linear hyperplane that becomes a nonlinear decision boundary if we project it back onto the original feature space:
 
-![hyperplane](https://i.imgur.com/FDnNVUQ.png)
+![hyperplane](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/hyperplane.png)
 
 #### 3.6.1 Using the kernel trick to find separating hyperplanes in higher dimensional space
 To solve a nonlinear problem using an SVM, we transform the training data onto a higher dimensional feature space via a mapping function $$\phi ( \cdot)$$ and train a linear SVM model to classify the data in this new feature space. Then we can use the same mapping function $$\phi ( \cdot)$$ to transform new, unseen data to classify it using the linear SVM model.
@@ -1559,7 +1559,7 @@ pl.show()
 
 As we can see in the resulting plot, the kernel SVM separates the XOR data relatively well:
 
-![svm kernel](https://i.imgur.com/b0MoIBt.png)
+![svm kernel](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/svm_kernel.png)
 
 The $$\gamma$$ parameter, which we set to gamma=0.1 , can be understood as a cut-off parameter for the Gaussian sphere. If we increase the value for  $$\gamma$$ , we increase the influence or reach of the training samples, which leads to a softer decision boundary. To get a better intuition for  $$\gamma$$ , let's apply RBF kernel SVM to our Iris flower dataset:
 
@@ -1624,7 +1624,7 @@ pl.show()
 Since we chose a relatively small value for $$\gamma$$ , the resulting decision boundary of the
 RBF kernel SVM model will be relatively soft, as shown in the following figure:
 
-![svm_iris](https://i.imgur.com/YVolvI0.png)
+![svm_iris](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/svm_iris.png)
 
 Now let's increase the value of $$\gamma$$ and observe the effect on the decision boundary:
 
@@ -1634,7 +1634,7 @@ svm = SVC(kernel='rbf', C=1.0, gamma=100.0, random_state=0)
 
 In the resulting plot, we can now see that the decision boundary around the classes 0 and 1 is much tighter using a relatively large value of $$\gamma$$  :
 
-![svm iris gamma 100](https://i.imgur.com/A1KRp8O.png)
+![svm iris gamma 100](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/svm_iris100.png)
 
 Although the model fits the training dataset very well, such a classifier will likely have a high generalization error on unseen data, which illustrates that the optimization of $$\gamma$$ also plays an important role in controlling overfitting.
 
@@ -1643,7 +1643,7 @@ Although the model fits the training dataset very well, such a classifier will l
 
 Let's consider the following example where we use a decision tree to decide upon an activity on a particular day:
 
-![decision_tree_illustration](https://i.imgur.com/9uGwXJs.png)
+![decision_tree_illustration](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/decision_tree_illustration.png)
 
 Based on the features in our training set, the decision tree model learns a series of questions to infer the class labels of the samples. Although the preceding figure illustrated the concept of a decision tree based on categorical variables, the same concept applies if our features. This also works if our features are real numbers like in the Iris dataset. For example, we could simply define a cut-off value along the **sepal width** feature axis and ask a binary question "sepal width ≥ 2.8 cm?"
 
@@ -1713,7 +1713,7 @@ pl.show()
 
 The plot produced by the preceding code example is as follows:
 
-![impurity](https://i.imgur.com/2c2LVK2.png)
+![impurity](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/impurity_measure.png)
 
 #### 3.7.2 Building a decision tree
 Decision trees can build complex decision boundaries by dividing the feature space into rectangles. However, we have to be careful since the deeper the decision tree, the more complex the decision boundary becomes, which can easily result in overfitting. Using scikit-learn, we will now train a decision tree with a maximum depth of 3 using entropy as a criterion for impurity. Although feature scaling may be desired for visualization purposes, note that feature scaling is not a requirement for decision tree algorithms. The code is as follows:
@@ -1773,7 +1773,7 @@ pl.show()
 
 After executing the preceding code example, we get the typical axis-parallel decision boundaries of the decision tree:
 
-![decision tree](https://i.imgur.com/u9rPD0O.png)
+![decision tree](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/decision_tree3.png)
 
 A nice feature in scikit-learn is that it allows us to export the decision tree as a `.dot` file after training, which we can visualize using the GraphViz program. This program is freely available at <http://www.graphviz.org> and supported by Linux, Windows, and Mac OS X.
 
@@ -1790,7 +1790,7 @@ After we have installed GraphViz on our computer, we can convert the tree.dot fi
 $ dot -Tpng tree.dot -o tree.png
 ```
 
-![tree](https://i.imgur.com/IMheeil.png)
+![tree](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/tree.png)
 
 Looking at the decision tree figure that we created via GraphViz, we can now nicely trace back the splits that the decision tree determined from our training dataset. We started with 105 samples at the root and split it into two child nodes with 34 and 71 samples each using the petal with cut-off ≤ 0.75 cm. After the first split, we can see that the left child node is already pure and only contains samples from the Iris-Setosa class (entropy = 0). The further splits on the right are then used to separate the samples from the Iris-Versicolor and Iris-Virginica classes.
 
@@ -1867,7 +1867,7 @@ pl.show()
 ```
 
 After executing the preceding code, we should see the decision regions formed by the ensemble of trees in the random forest, as shown in the following figure:
-![decision forest](https://i.imgur.com/we7mnyN.png)
+![decision forest](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/decision_forest.png)
 
 Using the preceding code, we trained a random forest from 10 decision trees via the `n_estimators `parameter and used the entropy criterion as an impurity measure to split the nodes. Although we are growing a very small random forest from a very small training dataset, we used the `n_jobs` parameter for demonstration purposes, which allows us to parallelize the model training using multiple cores of our computer (here, four).
 
@@ -1901,7 +1901,7 @@ The KNN algorithm itself is fairly straightforward and can be summarized by the 
 
 The following figure illustrates how a new data point  is assigned the triangle class label based on majority voting among its five nearest neighbors.
 
-![KNN_illustration](https://i.imgur.com/t5sTFSR.png)
+![KNN_illustration](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/KNN_illustration.png)
 
 Based on the chosen distance metric, the KNN algorithm finds the k samples in the training dataset that are closest (most similar) to the point that we want to classify. The class label of the new data point is then determined by a majority vote among its $$k$$ nearest neighbors.
 
@@ -1969,7 +1969,7 @@ pl.show()
 
 By specifying five neighbors in the KNN model for this dataset, we obtain a relatively smooth decision boundary, as shown in the following figure:
 
-![knn](https://i.imgur.com/AZzlers.png)
+![knn](https://github.com/Mageluer/computational_physics_N2014301040052/raw/master/final/img/knn.png)
 
 The *right* choice of $$k$$ is crucial to find a good balance between over- and underfitting. We also have to make sure that we choose a distance metric that is appropriate for the features in the dataset. Often, a simple Euclidean distance measure is used for real-valued samples, for example, the flowers in our Iris dataset, which have features measured in centimeters. However, if we are using a Euclidean distance measure, it is also important to standardize the data so that each feature contributes equally to the distance. The '*minkowski*' distance that we used in the previous code is just a generalization of the Euclidean and Manhattan distance that can be written as follows:
 
