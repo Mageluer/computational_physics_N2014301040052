@@ -12,8 +12,6 @@
 - [x] Exercise\_02:
   - [xart--generate art ascii texts](https://github.com/xlzd/xart)
   - [Use computers for presentation and consists of alpha string from the characters defined by the ASCII Standard](/exercise_02)
-  - [Set up github account and create the repo for computational physics](https://github.com/Mageluer)
-  - [Write the README.md](https://mageluer.github.io/blog/github-markdown)
 - [x] Exercise\_03:
   - [Previous work with ascii](/exercise_02)
   - [Improve the way to draw a string with ascii](/exercise_03#user-content-draw-string)
