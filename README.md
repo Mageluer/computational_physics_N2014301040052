@@ -46,5 +46,5 @@
   - [source file](/final)
   
 ## Others
-- [Cellular Automata of MCM2017](/MCM2017)
+- [Cellular Automata Model for MCM2017 B Problem](/MCM2017B)
 - [Atomic Spectrum of Abnormal Zeeman Effect](/spectrum)
