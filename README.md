@@ -44,3 +44,7 @@
 - [x] Final Homework
   - [Python Machine Learning](https://mageluer.github.io/blog/python-machine-learning)
   - [source file](/final)
+  
+## Others
+- [Cellular Automata of MCM2017](/MCM2017)
+- [Atomic Spectrum of Abnormal Zeeman Effect](/spectrum)
