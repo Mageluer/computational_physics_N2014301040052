@@ -10,7 +10,7 @@ def dec2frac(dec, signed=True):
             return "%+d/%d" % (round(i*dec), i) if signed else "%d/%d" % (round(i*dec), i)
     return "%+.4f" % dec if signed else "%.4f" % dec
 
-l_sym_ = ['S', 'P', 'D', 'F', 'G']
+l_sym_ = ['S', 'P', 'D', 'F', 'G', 'H', 'I', 'J']
 while True:
     n2 = int(input("n of the upper level(1,2,3...): "))
     l2 = int(input("l of the upper level(0,1,2...): "))
@@ -19,6 +19,8 @@ while True:
     if not abs(l2-l1) == 1:
     # check if l2-l1 == -1 or +1
         print("You should remember |l2-l1|=1!\nInput them all again!")
+    elif l1 > 7 or l2 > 7:
+        print("Are you kidding? l > 7?\nInput them all again!")
     else:
         break
 n_ = [n1, n2]
