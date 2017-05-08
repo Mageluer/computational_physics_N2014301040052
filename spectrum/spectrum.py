@@ -83,15 +83,16 @@ for mg in mg_:
 # get delta_m_, delta_mg_ and mg_jump_
 mg1_, mg2_ = mg_[0], mg_[1]
 m1_, m2_ = m_[0], m_[1]
+j1_, j2_ = j_[0], j_[1]
 j_base1_, j_base2_ = j_base_[0], j_base_[1]
-for mg1, m1, j_base1 in zip(mg1_, m1_, j_base1_):
-    for mg2, m2, j_base2 in zip(mg2_, m2_, j_base2_):
+for mg1, m1, j1, j_base1 in zip(mg1_, m1_, j1_, j_base1_):
+    for mg2, m2, j2, j_base2 in zip(mg2_, m2_, j2_, j_base2_):
         mg_jump = []
         delta_m = []
         delta_mg = []
         for i, j in zip(mg1, m1):
             for k, l in zip(mg2, m2):
-                if abs(j-l) <= 1:
+                if abs(j-l) <= 1 and abs(j1-j2) <= 1:
                     mg_jump.append([i+j_base1, k+j_base2])
                     delta_m.append((l - j))
                     delta_mg.append(k - i)
@@ -102,26 +103,26 @@ for mg1, m1, j_base1 in zip(mg1_, m1_, j_base1_):
                     delta_mg[i], delta_mg[j] = delta_mg[j], delta_mg[i]
                     delta_m[i], delta_m[j] = delta_m[j], delta_m[i]
                     mg_jump[i], mg_jump[j] = mg_jump[j], mg_jump[i]
-        mg_jump_.append(mg_jump)
-        delta_m_.append(delta_m)
-        delta_mg_.append(delta_mg)
+        if delta_m :
+            mg_jump_.append(mg_jump)
+            delta_m_.append(delta_m)
+            delta_mg_.append(delta_mg)
 
 # set horizon coordinate
 horizon_ = [0, j_base_tmp/4, j_base_tmp/3, j_base_tmp]
 horizon_nonmagnet_d = j_base_tmp / 4 / (len(delta_mg_)+1)
 horizon_nonmagnet_ = []
 horizon_nonmagnet_tmp = 0
-horizon_sep = j_base_tmp / 9 / (len(delta_mg_) + 1)
+horizon_sep = j_base_tmp / 9 / (len(delta_mg_) )
 horizon_d = j_base_tmp * 5/9 / (sum([len(i) for i in delta_mg_]))
 delta_mg_horizon_ = []
 horizon_tmp = horizon_[2]
 
-for i in j_base_[0]:
-    #horizon_nonmagnet = []
-    for j in j_base_[1]:
-        horizon_nonmagnet_tmp += horizon_nonmagnet_d
-        #horizon_nonmagnet.append(horizon_nonmagnet_tmp)
-        horizon_nonmagnet_.append(horizon_nonmagnet_tmp)
+for i, j1 in zip(j_base_[0], j_[0]):
+    for j ,j2 in zip(j_base_[1], j_[1]):
+        if abs(j1 - j2) <= 1:
+            horizon_nonmagnet_tmp += horizon_nonmagnet_d
+            horizon_nonmagnet_.append(horizon_nonmagnet_tmp)
 for i in delta_mg_:
     delta_mg_horizon = []
     horizon_tmp += horizon_sep
@@ -145,10 +146,11 @@ for j_base, j_base_sym, m, mg in zip(j_base_, j_base_sym_, m_, mg_):
 pl.text(horizon_tmp * 21 / 20, j_base_[-1][-1] + 3/2*mg_[-1][-1][-1] - 1/2*mg_[-1][-1][-2], 'm')
 pl.text(horizon_tmp * 22 / 20, j_base_[-1][-1] + 3/2*mg_[-1][-1][-1] - 1/2*mg_[-1][-1][-2], 'mg')
 
-for i in j_base_[0]:
-    for j in j_base_[1]:
-        k = horizon_nonmagnet_.pop(0)
-        pl.plot([k, k], [i, j])
+for i, j1 in zip(j_base_[0], j_[0]):
+    for j, j2 in zip(j_base_[1], j_[1]):
+        if abs(j1 - j2) <= 1:
+            k = horizon_nonmagnet_.pop(0)
+            pl.plot([k, k], [i, j])
 
 for delta_mg_horizon, mg_jump, delta_m, delta_mg in zip(delta_mg_horizon_, mg_jump_, delta_m_, delta_mg_):
     for i, j, k, l in zip(delta_mg_horizon, mg_jump, delta_m, delta_mg):
