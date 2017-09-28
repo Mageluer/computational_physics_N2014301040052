@@ -1,6 +1,6 @@
 # Computational Physics Powered by Python
 
-### [:blush: visit my home page](https://mageluer.github.io)
+### [:blush: visit my home page](http://mageluer.coding.me/)
  
 ## Homework List
 
